@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Copyright 2021 CNM Ingenuity, Inc.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+
+<?import edu.cnm.deepdive.view.TerrainView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Text?>
+
+<GridPane
+  xmlns="http://javafx.com/javafx"
+  xmlns:fx="http://javafx.com/fxml"
+  fx:controller="edu.cnm.deepdive.controller.MainController"
+  stylesheets="@styles.css">
+
+  <columnConstraints>
+    <ColumnConstraints
+      percentWidth="20"
+      halignment="LEFT"/>
+    <ColumnConstraints
+      percentWidth="60"
+      halignment="CENTER"/>
+    <ColumnConstraints
+      percentWidth="20"
+      halignment="RIGHT"/>
+  </columnConstraints>
+
+  <Text
+    fx:id="generationDisplay"
+    GridPane.rowIndex="0"
+    GridPane.columnIndex="0"/>
+
+  <Text
+    fx:id="populationDisplay"
+    GridPane.rowIndex="0"
+    GridPane.columnIndex="2"/>
+
+  <Pane
+    GridPane.rowIndex="1"
+    GridPane.columnIndex="0"
+    GridPane.columnSpan="3">
+
+    <TerrainView
+      fx:id="terrainView"
+      hue="300"/>
+
+  </Pane>
+
+  <ToggleButton
+    fx:id="toggleRun"
+    styleClass="button"
+    GridPane.rowIndex="2"
+    GridPane.columnIndex="0"
+    GridPane.rowSpan="2"
+    text="%start"
+    onAction="#toggleRun"/>
+
+  <Slider
+    fx:id="densitySlider"
+    value="20"
+    GridPane.rowIndex="2"
+    GridPane.columnIndex="1">
+
+    <tooltip>
+      <Tooltip
+        id="sliderValue"
+        text="${densitySlider.value}"/>
+    </tooltip>
+
+  </Slider>
+
+  <Label
+    id="densityLabel"
+    labelFor="$densitySlider"
+    GridPane.rowIndex="3"
+    GridPane.columnIndex="1"
+    mnemonicParsing="true"
+    text="%densityLabel"/>
+
+  <Button
+    fx:id="reset"
+    styleClass="button"
+    GridPane.rowIndex="2"
+    GridPane.columnIndex="2"
+    GridPane.rowSpan="2"
+    text="%reset"
+    onAction="#reset"/>
+
+</GridPane>

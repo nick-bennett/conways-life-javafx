@@ -1,0 +1,40 @@
+GridPane {
+  -fx-padding: 5px 5px 5px 5px;
+  -fx-alignment: center;
+  -fx-hgap: 5px;
+  -fx-vgap: 5px;
+}
+
+Text {
+  -fx-font-style: italic;
+}
+
+Pane {
+  -fx-background-color: black;
+  -fx-min-width: 250px;
+  -fx-min-height: 250px;
+  -fx-pref-width: 500px;
+  -fx-pref-height: 500px;
+  -fx-max-width: Infinity;
+  -fx-max-height: Infinity;
+}
+
+#densitySlider {
+  -fx-major-tick-unit: 5;
+  -fx-block-increment: 5;
+  -fx-minor-tick-count: 0;
+  -fx-snap-to-ticks: true;
+  -fx-show-tick-labels: false;
+  -fx-show-tick-marks: false;
+  -fx-alignment: bottom-center;
+  -fx-pref-width: 100%;
+}
+
+#densityLabel {
+  -fx-font-weight: bold;
+  -fx-alignment: top-center;
+}
+
+.button {
+  -fx-font-weight: bold;
+}
